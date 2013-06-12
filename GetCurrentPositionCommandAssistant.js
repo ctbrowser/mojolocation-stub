@@ -19,6 +19,42 @@
 var GetCurrentPositionCommandAssistant = function(){
 }
 
+/**
+    * @file The Location service provides basic location services for single or multiple location fixes.
+    * @tvwebosservice com.webos.location
+*/
+
+/////////////////////////////////////////////////////////////////
+//                                                             //
+//            Start of API documentation comment block         //
+//                                                             //
+/////////////////////////////////////////////////////////////////
+/**
+    * @tvwebosapi
+    * @function 
+    * @name getCurrentPosition
+    * @description Requests a location fix. This method does not return until a valid fix is available or the responseTime is exceeded. If called without any parameters, it returns the medium accuracy result.
+     <dl class="section service"><dt><h5>Service</h5></dt><dd>com.webos.location/APIPath</dd></dl>
+    * @param {Number} accuracy One of {1 - High, 2 - Medium, 3 - Low}
+    * @param {Number} maximumAge Set to 0 to request a new (non-cached) result.
+    * @param {Number} responseTime One of { 1 - < 5s, 2 (default) - < 20s, 3 - > 20s }
+    * @returns {Boolean} returnValue [required]: Always true
+    * @returns {Number} errorCode [required]: 0 for success
+    * @returns {Number} altitude: in meters. If unknown, the value is -1
+    * @returns {Number} heading: azimuth in degrees, range [0.360.0] or -1 if unknown.
+    * @returns {Number} horizAccuracy: Horizontal accuracy in meters. If unknown, the value is -1
+    * @returns {Number} latitude: Location's latitude in degrees. Valid range: -90.0, 90.0.
+    * @returns {Number} longitude: Location's longitude in degrees. Valid range: -180.0, 180.0.
+    * @returns {Number} timestamp: Time when location was fixed. This is milliseconds since Epoch, aka Unix time.
+    * @returns {Number} velocity: Velocity in meters per second. If unknown, the value is -1.
+    * @returns {Number} vertAccuracy: Location's vertical accuracy in meters. If unknown, the value is -1.
+*/
+/////////////////////////////////////////////////////////////////
+//                                                             //
+//            End of API documentation comment block           //
+//                                                             //
+/////////////////////////////////////////////////////////////////
+
 GetCurrentPositionCommandAssistant.prototype.run = function(future) {
 	//console.log(">>>>>>> in GetCurrentPositionCommandAssistant");
 	console.log ("%j", this.controller.args);
